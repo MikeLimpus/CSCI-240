@@ -24,13 +24,30 @@ int main()
         if (nextChar == '@')
             gotAt = TRUE;
         if (nextChar == '.' && gotAt == TRUE)
-            gotDot == TRUE;
-        if ((nextChar >= 'A' && nextChar <='Z')
+            gotDot = TRUE;
+        /*
+         * Checks to see if there is a character in all of the designated places.
+         * There may be a better way of doing this, might want to look back at 
+         * this later
+         */
+        if ((nextChar >= 'A' && nextChar <='Z') || (nextChar >='a' && nextChar <= 'z')) {
+            if (charBefore == FALSE && charBetween == FALSE && charAfter == FALSE) {
+                charBefore = TRUE;
+            }
+            else if (charBefore == TRUE && charBetween == FALSE && charAfter == FALSE) {
+                charBetween = TRUE;
+            }
+            else if (charBefore == TRUE && charBetween == TRUE && charAfter == FALSE) {
+                charAfter = TRUE;
+            }
+        }
             
     }
     while (nextChar != ' ' && nextChar != '\n');
-    if (gotAt == TRUE && gotDot == TRUE)
+    if (gotAt == TRUE && gotDot == TRUE && charBefore == TRUE && 
+        charBetween == TRUE && charAfter == TRUE) {
         printf("Your email address appears to be valid.\n");
+        }
     else
         printf("Your email address is not valid!\n");
     return 0; 
