@@ -11,6 +11,7 @@
 int main() 
 {
     char nextChar;          /*Next character in e-mail address*/
+    char prevChar;          /*Previous Character in email address*/
     int gotAt = FALSE;      /*Indicates if At @ was found*/
     int gotDot = FALSE;     /*Indicates if Dot. was found*/
     int charBefore = FALSE; /*Indicates if a char appeared before At @*/
@@ -20,28 +21,22 @@ int main()
     printf("Enter your email address: ");
     do{
         scanf("%c", &nextChar);
-
-        if (nextChar == '@')
-            gotAt = TRUE;
-        if (nextChar == '.' && gotAt == TRUE)
-            gotDot = TRUE;
-        /*
-         * Checks to see if there is a character in all of the designated places.
-         * There may be a better way of doing this, might want to look back at 
-         * this later
-         */
-        if ((nextChar >= 'A' && nextChar <='Z') || (nextChar >='a' && nextChar <= 'z')) {
-            if (charBefore == FALSE && charBetween == FALSE && charAfter == FALSE) {
-                charBefore = TRUE;
-            }
-            else if (charBefore == TRUE && charBetween == FALSE && charAfter == FALSE) {
-                charBetween = TRUE;
-            }
-            else if (charBefore == TRUE && charBetween == TRUE && charAfter == FALSE) {
-                charAfter = TRUE;
-            }
+        //Check if character before @ is alphanumeric
+        if (nextChar == '@' && ((prevChar >= '0' && prevChar <= '9') || (prevChar >= 'A' && prevChar <= 'Z') || (prevChar >= 'a' && prevChar <= 'z'))) {
+            gotAt = TRUE; 
+            charBefore = TRUE;
         }
-            
+        //Check if an alphanumeric character exists between @ and .
+        if (nextChar == '.' && gotAt == TRUE && ((prevChar >= '0' && prevChar <= '9') || (prevChar >= 'A' && prevChar <= 'Z') || (prevChar >= 'a' && prevChar <= 'z'))) {
+            gotDot = TRUE;
+            charBetween = TRUE;
+        }
+        //Check if an alphanumberic character exists after . 
+        if (gotAt == TRUE && gotDot == TRUE && ((nextChar >= '0' && nextChar <= '9') || (nextChar >= 'A' && nextChar <= 'Z') || (nextChar >= 'a' && nextChar <= 'z'))) {
+            charAfter = TRUE;
+        }
+        //Assign currently inputted char to a new variable for checking
+        prevChar = nextChar;  
     }
     while (nextChar != ' ' && nextChar != '\n');
     if (gotAt == TRUE && gotDot == TRUE && charBefore == TRUE && 
