@@ -13,23 +13,18 @@
 int main() {
     char counter;
     char startPoint;
-    int isDone = 0; //Allows for user to re-enter if invalid
 
-    printf("===== Countdown Program =====\n");
-       
-    do { 
-        printf("Enter a Character: ");
-        scanf("%c", &startPoint);
+    printf("===== Countdown Program =====\n");   
+    printf("Enter a Character: ");
+    scanf("%c", &startPoint);
 
-        if(startPoint >= 33 && startPoint <= 126) {
-            for(counter = startPoint; counter >= STOP; counter--) {
-                printf(" %c", counter);
-            }
-            printf("\n");
-            isDone = 1;
+    if(startPoint >= 33 && startPoint <= 126) {
+        for(counter = startPoint; counter >= STOP; counter--) {
+            printf(" %c", counter);
+        }
+        printf("\n");
         }
         else {
             printf("Please enter a valid character\n");
         }
-    } while (isDone == 0);
 }
