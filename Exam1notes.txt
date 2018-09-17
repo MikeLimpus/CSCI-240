@@ -1,0 +1,53 @@
+1)  Convert Between Binary (2's complement), Dec, Oct, Hex
+	-You will have a large amount of these and are thus expected to do them relatively quickly ( maybe 30 seconds)
+	-Largest value : 8 bits
+	-Powers of 2:
+	0	1
+	1	2
+	2	4
+	3	8
+	4	16
+	5	32
+	6	64
+	7	128
+	1000 0000 - 1 = 0111 1111 = 128 - 1 = 127
+2) Adding/Subtracting Binary number
+	-Do not worry about oct or hex
+	-Operations are assumming 8 bits, therefore
+		-Know when and how to do sign padding in the event we have a 7 
+		bit or less string
+		-Know how to detect overflow
+3) Bitwise operations on binary numbers
+	- AND, OR, XOR, NOT, NAND, NOR
+	- Demorgan's Law might help
+	- Logical identitois may help too
+	- 0 OR X = X
+	- 1 AND X = X
+Transistors/Digital Logic/Digital Circuits
+1) Know the difference between p-type and n- type transistors
+	-Be able to draw their schematics
+	-Be able to show how when combined they can form a CMOS
+		-Be able to draw its schematic
+2) Do not memorize the schematics for any of the logical opertions
+	- NAND, AND, NOR, OR, XOR
+DO MEMORIZE NOT TRANSISTOR
+3) Be able to determine if a transistor level schematic is valid, also be able 
+to draw its truth table
+
+Memory: 
+ -Know what addressability means/is
+ -Know how to calculate the amount of memory given the number of registers and 
+the size or width of each register 
+ -Know how many bits are required for a given amount of registers and vice versa
+ -Be familiar with the gate-level circuit of memory
+	-Know which combinational circuits form memory 
+Digital Circuits 
+	-Given a digital circuit (the thing with the logic gates) draw its truth table
+	-Given a series of inputs, determine its output
+	-Know what it means for a digital circuit to be a storage element
+	-Know the implications of a programmable logic array
+		-That is, what does it say about the digital circuit given an fixed number of inputs and outputs
+	-Be able to apply DeMorgan's Laws (intentionally plural) 
+	-Given a digital circuit, construct the Boolean expression for its output 
+	-What properties does a truth table have given a number of inputs 
+	-Again, make a truth table from a digital circuit	
