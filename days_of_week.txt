@@ -1,0 +1,20 @@
+TRAP x20		;GETC  ;R0 = c
+ADD R0, #-16
+ADD R0, #-16
+ADD R0, #-16
+BR_n END 
+R6 <- 2 
+ADD R1, R0, R6	;c-2 > 0
+BR_p END
+;R3 already contaoms the numerical code of the day i 
+LEA R0, DAYS	; Address of "Sunday" in R0 
+ADD R3, R3. x0	; To be able to use condition codes
+; The loop (4 instructions) implements R0 <- R0 + 10 * i 
+BR_z DISPLAY 
+ADD R0, R0, #10	; Go to next day 
+ADD R3, R3. #-1	; Decrement loop variable 
+BR LOOP 
+
+TRAP x22		;PUTS
+
+TRAP x25		;HALT
