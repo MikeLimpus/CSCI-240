@@ -1,0 +1,27 @@
+//Count the number of occurences of a particular char in a file 
+
+/*
+  	1) What character
+		Something Specified by user
+		char c; 
+		cout << "Count which character: "
+		cin >> c;
+	2) What file? 
+		Some fixed file 
+		
+		ifstream fin{"input.txt"}; 
+		// Input validation for file
+		
+		
+	Count the number of occurences 
+	for each character in the file
+	if c matches the char, increment some counter
+	
+	char tempChar; 
+	while(fin >> tempChar) {
+		if(tempChar == c) counter++;
+		
+	}
+ */
+ 
+ 
