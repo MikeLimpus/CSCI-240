@@ -49,6 +49,8 @@ In addition to the material above, I recommend you specifically study the follow
     
 # Additional Notes
 Study DeMorgan's Laws
+### OR in LC-3
+	-NOT(NOT(A) AND NOT(B))
 
 ## Some ISA notes
 ##### Immediate
@@ -78,3 +80,4 @@ Study DeMorgan's Laws
 	-LDR Base + offset
 	-LDI Indirect
 	-LD  PC offset
+
