@@ -46,3 +46,12 @@ In addition to the material above, I recommend you specifically study the follow
     Combining arithmetic functions from Lab: LC-3 (Section 2) to form more complicated arithmetic expressions. For example, given your knowledge on computing X - Y , you may be asked to calculate X − ( Y − Z )
     Applying DeMorgan's Law
     Non-Operations
+    
+### Additional Notes
+**DeMorgan's Laws**
+
+#### Some ISA notes
+##### Immediate
+	-Operand in instruction
+		-LDI
+		-STI
