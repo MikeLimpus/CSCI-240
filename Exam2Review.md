@@ -47,11 +47,29 @@ In addition to the material above, I recommend you specifically study the follow
     Applying DeMorgan's Law
     Non-Operations
     
-### Additional Notes
-**DeMorgan's Laws**
+# Additional Notes
+Study DeMorgan's Laws
 
 #### Some ISA notes
 ##### Immediate
 	-Operand in instruction
 		-LDI
 		-STI
+##### Register 
+	-Base
+	-LDR
+	-STR
+	-JMP
+	-ADD
+	-AND
+##### PC-Relative
+	-PC Offset 9 [-256, 255]
+	-BR, LD, LDI
+	-LEA, ST, STI 
+##### Indirect 
+	- LDI, STI 
+	- Double lookup
+##### Base + Offset
+	- BaseR + ?
+	- LDR
+	- STR 
