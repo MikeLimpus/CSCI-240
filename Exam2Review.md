@@ -1,19 +1,19 @@
 # Test Format
 
-Fill in the blank (No word bank) (20 @ 0.5 pts)
+Fill in the blank (No word bank) (20 @ 0.5 pts): 
 	_______________ means ______ 
 	The operation ____ is used to clear the value of a register
 	19 total words (7 questions)
-True/False (No 'explain why false') (5 @ 2pts)
+True/False (No 'explain why false') (5 @ 2pts): 
 	5 questions 
-Programming Snippets (2 @ 10 pts each)
+Programming Snippets (2 @ 10 pts each):
 	Write LC3  instructions to do the following
 		Store the result of |x| into x3120 
 		Store the result of OR into x3121 
 		Given the ability to do X - Y
 			X - (Y + Z)
-Short answer (4 @ 5pts) 
-The Big One™ (1 @ 20pts)
+Short answer (4 @ 5pts):
+The Big One™ (1 @ 20pts):
 	In the lecture, given a table of maching code values, you will determine: 
 		- What the instructions are
 		- What the program as a whole does
