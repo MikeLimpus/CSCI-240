@@ -78,8 +78,8 @@ Study DeMorgan's Laws
 	- STR 
 
 ##### Load instructions
-	|LEA | Immediate|
-	|LDR | Base + offset |
-	|LDI | Indirect |
-	|LD  | PC offset |
+	LEA | Immediate
+	LDR | Base + offset 
+	LDI | Indirect 
+	LD  | PC offset 
 
