@@ -15,7 +15,9 @@ Programming Snippets (2 @ 10 pts each):
 		Store the result of OR into x3121 
 		Given the ability to do X - Y
 			X - (Y + Z)
-Short answer (4 @ 5pts)
+Short answer (4 @ 5pts):
+
+	
 The Big One™ (1 @ 20pts):
 
 	In the lecture, given a table of maching code values, you will determine: 
