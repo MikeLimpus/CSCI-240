@@ -53,8 +53,7 @@ Study DeMorgan's Laws
 ## Some ISA notes
 ##### Immediate
 	-Operand in instruction
-		-LDI
-		-STI
+
 ##### Register 
 	-Base
 	-LDR
@@ -73,3 +72,9 @@ Study DeMorgan's Laws
 	- BaseR + ?
 	- LDR
 	- STR 
+
+##### Load instructions
+	-LEA Immediate
+	-LDR Base + offset
+	-LDI Indirect
+	-LD  PC offset
