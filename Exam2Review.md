@@ -43,6 +43,6 @@ Question types include Fill-in-the-Blank, True/False, LC-3 Program Snippets, Sho
 
 In addition to the material above, I recommend you specifically study the following:
 
-    Combining arithmetic functions from Lab: LC-3 (Section 2) to form more complicated arithmetic expressions. For example, given your knowledge on computing LaTeX: X-Y X − Y , you may be asked to calculate LaTeX: X\:-\:\left(Y\:-\:Z\right) X − ( Y − Z )
+    Combining arithmetic functions from Lab: LC-3 (Section 2) to form more complicated arithmetic expressions. For example, given your knowledge on computing X - Y , you may be asked to calculate X − ( Y − Z )
     Applying DeMorgan's Law
     Non-Operations
