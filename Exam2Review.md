@@ -1,4 +1,4 @@
-#Test Format
+# Test Format
 
 Fill in the blank (No word bank) (20 @ 0.5 pts)
 	_______________ means ______ 
@@ -23,7 +23,7 @@ The ISA table is provided on the test
 
 3x5 Notecard allowed 
 
-#Material
+# Material
 
 This exam will cover material from Chapter 4, Chapter 5, and Chapter 6 of the text. To prepare for the exam, be sure you:
 
