@@ -50,7 +50,7 @@ In addition to the material above, I recommend you specifically study the follow
 # Additional Notes
 Study DeMorgan's Laws
 
-#### Some ISA notes
+## Some ISA notes
 ##### Immediate
 	-Operand in instruction
 		-LDI
