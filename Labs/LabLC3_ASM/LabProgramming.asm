@@ -66,7 +66,7 @@ PRZERO
 
 ;
 ; Lookup table to convert numbers 0-9 into 
-; Psuedo-binary strings
+; binary strings
 ;
 
 NINE	.STRINGZ	"1001"
