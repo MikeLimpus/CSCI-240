@@ -1,0 +1,6 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	NEWLINE                 300C
+//	PTR                     300D
+//	ReadChar                3001
+//	Terminate               3007
