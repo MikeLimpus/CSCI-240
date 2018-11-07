@@ -8,10 +8,11 @@
 LOOP	ADD R0 R0 R0
 		ADD R1 R1 -1 
 		BRp LOOP 
-		ST R0 SHIFT
+		STI R0 SHIFT
 		HALT 
-		;.ORIG x3100
+
 BIN		.FILL xFFFA	; Binary string b 
 INT		.FILL x0004	; Integer n, must be in range[0, 16]
-SHIFT	.FILL x0000	; Clear memory location x3102 
+SHIFT	.FILL x3102	; Clear memory location x3102 
+PTR		.FILL x3100 ; Pointer to memory location
 		.END
