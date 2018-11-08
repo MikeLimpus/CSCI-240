@@ -1,7 +1,8 @@
 //Symbol Name		Page Address
 //----------------	------------
-//	BIN                     3007
-//	INT                     3008
-//	LOOP                    3002
-//	PTR                     300A
-//	SHIFT                   3009
+//	BIN                     300B
+//	BPTR                    300D
+//	INT                     300C
+//	LOOP                    3006
+//	NPTR                    300E
+//	SHFTPTR                 300F

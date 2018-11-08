@@ -9,9 +9,9 @@
 		STI R4 BPTR
 		STI R5 NPTR
 ; Begin main program
-		LDR R0 BPTR
-		LDR R1 NPTR
-LOOP		ADD R0 R0 R0
+		LDI R0 BPTR
+		LDI R1 NPTR
+LOOP	ADD R0 R0 R0
 		ADD R1 R1 -1 
 		BRp LOOP 
 		STI R0 SHFTPTR
@@ -19,7 +19,7 @@ LOOP		ADD R0 R0 R0
 ; Variables 
 BIN		.FILL xFFFA	; Binary string b 
 INT		.FILL x0004	; Integer n, must be in range[0, 16] 
-BPTR		.FILL x3100 	; Pointer to memory location for b
-NPTR		.FILL X3101	; Pointer to memory location for n
-SHFTPTR         .FILL x3102     ; Clear memory location x3102
+BPTR	.FILL x3100 ; Pointer to memory location for b
+NPTR	.FILL X3101	; Pointer to memory location for n
+SHFTPTR .FILL x3102 ; Clear memory location x3102
 		.END
