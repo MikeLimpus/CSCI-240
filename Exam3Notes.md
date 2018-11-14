@@ -35,6 +35,24 @@ List of psuedo-ops:
   .ORIG   -> indicates where to begin program
   .BLKW   -> Allocate memory. use when the amount of memory needed is unknown to the programmer
   .FILL   -> Stores a value NNNN at the current memory address
-  .STRINGZ-> 
+  .STRINGZ-> Allocates n +1 places in memory for a string of characters 
   .EXTERNAL
+  ```
+
+### 2-Pass Assembly
+
+  First Pass will populate a symbol table for all variables 
+  ```
+//Symbol Name		Page Address
+//----------------	------------
+//	BIN                     3014
+//	BPTR                    3016
+//	INT                     3015
+//	LOOP                    3006
+//	NEG                     3009
+//	NPTR                    3017
+//	POS                     300E
+//	SHFTPTR                 3018
+//	STORE                   3012
+
   ```
