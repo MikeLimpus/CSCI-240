@@ -30,11 +30,11 @@ Question types include Fill-in-the-Blank, True/False, LC-3 Program Snippets, Sho
   - Operators for the assembler, not for the LC-3 itself
 
 List of psuedo-ops:
-
-
-  .END
-  .ORIG
-  .BLKW
-  .FILL
-  .STRINGZ
+```
+  .END    -> Indicates end of program
+  .ORIG   -> indicates where to begin program
+  .BLKW   -> Allocate memory. use when the amount of memory needed is unknown to the programmer
+  .FILL   -> Stores a value NNNN at the current memory address
+  .STRINGZ-> 
   .EXTERNAL
+  ```
