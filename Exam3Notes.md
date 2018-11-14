@@ -18,3 +18,23 @@ This exam will cover material from Chapter 7 and Chapter 8 of the text. To prepa
     Understand what is required for interrupt-driven I/O to occur (including priority)
 
 Question types include Fill-in-the-Blank, True/False, LC-3 Program Snippets, Short Answers, Program Interpretation, and a Programming Component.
+
+
+### Components of assembly language instructions 
+
+*LABEL* OPERATOR OPERANDS ; *COMMENT*
+
+### Psuedo-ops
+
+  - Not technically LC-3 instructions
+  - Operators for the assembler, not for the LC-3 itself
+
+List of psuedo-ops:
+
+
+  .END
+  .ORIG
+  .BLKW
+  .FILL
+  .STRINGZ
+  .EXTERNAL
