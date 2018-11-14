@@ -13,6 +13,8 @@ LOOP	ADD R0 R0 R0
 
 BIN		.FILL xFFFA	; Binary string b 
 INT		.FILL x0004	; Integer n, must be in range[0, 16]
-SHIFT	.FILL x3102	; Clear memory location x3102 
-PTR		.FILL x3100 ; Pointer to memory location
+BPTR	.FILL x3100 ; Pointer to input string 
+NPTR	.FILL x3101 ; Pointer to shift amount
+SHFTPTR	.FILL x3102	; Pointer to store answer  
+
 		.END
