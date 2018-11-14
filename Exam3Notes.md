@@ -56,3 +56,19 @@ List of psuedo-ops:
 //	STORE                   3012
 
   ```
+  
+  ### I/O
+  
+  I/O devices use a [Device Status Register] and [Device Data Register] 
+  
+  #### Polling vs Interupt
+  
+  Polling: 
+    ``` LOOP  LDI R0, KBSR
+              BRz LOOP
+              
+        KBSR  .FILL xFE02
+        KBDR  .FILL xFE04
+  ```
+  
+  
