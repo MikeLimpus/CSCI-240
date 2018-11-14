@@ -64,11 +64,12 @@ List of psuedo-ops:
   #### Polling vs Interupt
   
   Polling: 
-    ``` LOOP  LDI R0, KBSR
+  ```
+    LOOP  LDI R0, KBSR
               BRz LOOP
               
-        KBSR  .FILL xFE02
-        KBDR  .FILL xFE04
+    KBSR  .FILL xFE02
+    KBDR  .FILL xFE04
   ```
   
   
