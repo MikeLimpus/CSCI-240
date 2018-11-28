@@ -1,0 +1,11 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	BIN                     3014
+//	BPTR                    3016
+//	INT                     3015
+//	LOOP                    3006
+//	NEG                     3009
+//	NPTR                    3017
+//	POS                     300E
+//	SHFTPTR                 3018
+//	STORE                   3012

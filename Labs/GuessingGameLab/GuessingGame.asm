@@ -32,6 +32,7 @@ PTR        .FILL x4000
 PROMPT	   .STRINGZ "Guess a number between 0 & 9" 
 SMALL	   .STRINGZ "Too small" 
 BIG 	   .STRINGZ "Too Big" 
-CORRECT	   .STRINGZ "Correct!"
+CORRECT1   .STRINGZ "Correct! You took "
+CORRECT2   .STRINGZ " guesses."
 .END
 
