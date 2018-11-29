@@ -7,7 +7,7 @@ Main    ADD R0, R0, 0
         ADD R0, R0, 7
         JSR PrintMe     ;F Call PrintMe 
         ADD R0, R0, 1
-        JSR PrintMe     ;Function PrintMe 
+        JSR PrintMe     ;Function PrintMe
         JSR PassVal     ;Function call PassByValue
         JSR PrintMe     ;Function PrintMe
         JSR PassRef     ;Function PassByReference
