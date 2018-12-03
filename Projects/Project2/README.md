@@ -23,12 +23,12 @@ The encryption scheme will consist of two operations performed on the binary str
 For example, consider the character A whose ASCII value has a binary string representation of 0000 0000 0100 0001 and an encryption key value of 6. Toggling the LSB will yield the binary string 0000 0000 0100 0000 and then adding the encryption key which has a binary representation of 0110 will yield the encrypted binary string 0000 0000 0100 0110 which is the binary string representing of the character F.
 
 # Submission Instructions
-Submit the following items on Canvas:
+``` Submit the following items on Canvas:
 Source Code: Name the source ﬁles FirstName LastName-part1.bin and FirstName LastName-part2.bin Report: Your report must contain the following information:
 	– Your name
-	– Flowcharts that show the algorithms that you used in your programs (see LucidChart) – A list of test cases and results
 	– A brief discussion of your project experience
 		Did you enjoy this project? What problems did you encounter?
  		What did you get out of the project?
 		How did you ﬁnd the project (too easy, easy, just right, diﬃcult, too diﬃcult)
-		What type of help/references did you use in your project (i.e. book, web sites, classmates,
+		What type of help/references did you use in your project (i.e. book, web sites, classmates, 
+```
