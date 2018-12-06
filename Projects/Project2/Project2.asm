@@ -47,7 +47,9 @@ Encrypt ST R7 ER7       ; Save R7(PC) from PUTS
         LD R5 SolPtr    ; Pointer to output
         ADD R2 R2 10    ; Counter = 20
         ADD R2 R2 10
-EInput  IN 
+EInput  GETC 
+        OUT 
+        ADD R1 R0 0     ; Store input in new register to be encrypted
         ; Check if \n was inputted 
         ADD R0 R0 -10   ; Newline == ASCII 10
         BRz EIend       ; Break if input == \n 
@@ -58,7 +60,7 @@ EInput  IN
 ; Thus, if (input AND 1) = 0, add 1, then add key 
 ; else subract 1, and add key 
 ; Store location in memory
-        AND R1 R0 1      
+        AND R6 R1 1      
         BRz EZero
         BRp EOne
 EZero   ADD R1 R1 1     ; Toggle LSB 
@@ -71,8 +73,18 @@ ENext   ADD R1 R1 R4    ; Key is in R4
         ADD R2 R2 -1    ; Decrement counter
         BRp EInput
         
-        ;STI R0 StrPtr   ; Store string at x4002 
-EIend   LD R7 ER7       ; Load R7 with former PC 
+EIend   LEA R0 SolPtr
+        OUT 
+      
+        ; Clear registers 
+        AND R0 R0 0
+        AND R1 R1 0
+        AND R2 R2 0 
+        AND R3 R3 0
+        AND R4 R4 0
+        AND R5 R5 0
+        AND R6 R6 0 
+        LD R7 ER7       ; Load R7 with former PC
         RET
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 Decrypt ST R7 DR7       ; Save R7(PC) from PUTS
@@ -85,11 +97,6 @@ Decrypt ST R7 DR7       ; Save R7(PC) from PUTS
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Prompt  .STRINGZ "(E)ncrypt or (D)ecrypt\n"
-InFail  .STRINGZ "Illegal Input. Try again.\n"
-EPrompt .STRINGZ "Please input your single-digit encryption key\n"
-DPrompt .STRINGZ "Please input your single-digit decryption key\n"
-SPrompt .STRINGZ "Please begin inputting your string (20 char limit)"
 NegD    .FILL -68
 ASCII   .FILL -48
 InPtr   .FILL x4000
@@ -99,6 +106,12 @@ SolPtr  .FILL x4020
 Key     .BLKW 1 
 ER7     .BLKW 1
 DR7     .BLKW 1
+Prompt  .STRINGZ "(E)ncrypt or (D)ecrypt\n"
+InFail  .STRINGZ "Illegal Input. Try again.\n"
+EPrompt .STRINGZ "Please input your single-digit encryption key\n"
+DPrompt .STRINGZ "Please input your single-digit decryption key\n"
+SPrompt .STRINGZ "\nPlease begin inputting your string (20 char limit): "
+
 
 
         .END
