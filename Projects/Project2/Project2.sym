@@ -1,0 +1,18 @@
+//Symbol Name		Page Address
+//----------------	------------
+//	A                       3056
+//	Again                   300E
+//	B                       3077
+//	D                       300A
+//	DR7                     3055
+//	Decrypt                 3018
+//	E                       300C
+//	ER7                     3054
+//	Encrypt                 3012
+//	End                     3011
+//	InFail                  3036
+//	Main                    3000
+//	NegD                    3051
+//	NegE                    3053
+//	PosE                    3052
+//	Prompt                  301E
