@@ -7,7 +7,7 @@
         .ORIG x3000
 Main    LEA R0 Prompt
         ; Load R[4] with value to test input 
-        LD R4 NegD
+        LD R4 NegD      ; 
         PUTS
         AND R0 R0 0     ; Clear R0 for input
         GETC 
@@ -88,10 +88,66 @@ EIend   LEA R0 SolPtr
         RET
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;  
 Decrypt ST R7 DR7       ; Save R7(PC) from PUTS
-        AND R0 R0 0
-        LEA R0 DPrompt 
+        AND R0 R0 0     ; Clear registers used in main function
+        AND R4 R4 0
+        LEA R0 DPrompt
+        PUTS 
+        AND R0 R0 0     ; Clear R0
+        GETC            ; Get key digit (no input validation) 
+        LD R1 ASCII
+        ADD R4 R0 R1    ; Convert input char to int and store in new register
+        STI R0 KeyPtr   ; Store input at x4001 
+        OUT             ; Print key 
+        NOT R4 R4       ; Negate Key for subtraction
+        ADD R4 R4 1
+        AND R0 R0 0     ; Clear R0 
+        LEA R0 SPrompt  ; Load prompt for input 
         PUTS
-        LD R7 DR7       ; Load R7 with former PC 
+        AND R0 R0 0     ; Clear R0 
+                        ; Begin inputting 20 chars 
+        LD R3 StrPtr    ; Pointer to where the input should be stored 
+        LD R5 SolPtr    ; Pointer to output
+        ADD R2 R2 10    ; Counter = 20
+        ADD R2 R2 10
+
+DInput  GETC 
+        OUT 
+        ADD R1 R0 0     ; Store input in new register to be encrypted
+        ; Check if \n was inputted 
+        ADD R0 R0 -10   ; Newline == ASCII 10
+        BRz DIend       ; Break if input == \n 
+        ADD R0 R0 10    ; Else, return input back to what it was 
+        STR R0 R3 0     ; Store character in memory x4002 + n 
+; Perform Decryption algorithm                        
+; xxxx xxxx xxxx xxxx AND 0000 0000 0000 0001 = 0 if LSB is 0
+; Thus, if (input AND 1) = 0, add 1, then subtraction key 
+; else subract 1, and subtract key 
+; Store location in memory
+        AND R6 R1 1      
+        BRz DZero
+        BRp DOne
+DZero   ADD R1 R1 1     ; Toggle LSB 
+        BRnzp DNext 
+DOne    ADD R1 R1 -1    ; Toggle LSB 
+DNext   ADD R1 R1 R4    ; Key is in R4 
+        STR R1 R5 0     ; Store at x4020 + n 
+        ADD R3 R3 1     ; Increment pointers &
+        ADD R5 R5 1
+        ADD R2 R2 -1    ; Decrement counter
+        BRp DInput
+        
+DIend   LEA R0 SolPtr
+        OUT 
+      
+        ; Clear registers 
+        AND R0 R0 0
+        AND R1 R1 0
+        AND R2 R2 0 
+        AND R3 R3 0
+        AND R4 R4 0
+        AND R5 R5 0
+        AND R6 R6 0 
+        LD R7 DR7       ; Load R7 with former PC
         RET
 
 
@@ -111,7 +167,5 @@ InFail  .STRINGZ "Illegal Input. Try again.\n"
 EPrompt .STRINGZ "Please input your single-digit encryption key\n"
 DPrompt .STRINGZ "Please input your single-digit decryption key\n"
 SPrompt .STRINGZ "\nPlease begin inputting your string (20 char limit): "
-
-
 
         .END
